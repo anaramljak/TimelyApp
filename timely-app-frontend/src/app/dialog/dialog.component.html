@@ -1,0 +1,21 @@
+<div>
+   <button [hidden]="stClicked" (click)="start()">Start</button>
+    <div *ngIf="stClicked" >
+        <button  mat-button (click)="openDialog()" >Stop</button>
+        <table>
+        <tr>
+         <th>Project</th>
+         <th>Start</th>
+         <th>Stop</th>
+         <th>Durition</th>
+       </tr>
+       <tr>
+         <td>...</td>
+         <td>{{stTime | date: "dd.MM.yyy hh:mm" }}</td>
+         <td>...</td>
+         <td>...</td>
+       </tr>
+       </table>
+    </div>
+    
+</div>

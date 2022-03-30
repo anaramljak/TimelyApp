@@ -1,0 +1,29 @@
+
+<div>
+
+
+<h1 mat-dialog-title>Stop timer</h1>
+        <div mat-dialog-content>Project Name*</div>
+    <div mat-dialog-actions>
+        <input [(ngModel)] = pName >
+        <button mat-button mat-dialog-close [hidden]="spClicked" (click)="stop()">Stop</button>
+    </div>
+
+<div *ngIf="this.spClicked">
+    <table *ngFor="let data in rows">
+        <tr>
+         <th>Project</th>
+         <th>Start</th>
+         <th>Stop</th>
+         <th>Durition</th>
+       </tr>
+       <tr>
+         <td>{{data?.projectName}}</td>
+         <td>{{data?.startTime | date: "dd.mm.yyy hh:mm" }}</td>
+         <td>{{data?.stopTime | date: "dd.mm.yyy hh:mm" }}</td>
+         <td>{{data?.durition | date: "hh:mm" }}</td>
+       </tr>
+       </table>
+
+</div>
+</div>
